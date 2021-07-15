@@ -34,7 +34,7 @@ else
   echo "Please wait while it is scanning all the open ports... THIS WILL TAKE SOME TIME"
   nc -nvz $1 1-65535 > $1.txt 2>&1
 fi
-tac $1.txt
+cat ./$1.txt | grep -v failed
 rm -rf $1.txt
 
 ```
